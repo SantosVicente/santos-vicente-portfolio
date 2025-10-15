@@ -1,0 +1,47 @@
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { VideoBackground } from "@/components/video-background";
+import { AnimatedLines } from "@/components/ui/animated-lines";
+import { LiveViewerCounter } from "./ui/live-viewer-counter";
+import { AnimatedGlowButton } from "./ui/animated-glow-button";
+
+export function HomeSection() {
+  return (
+    <section
+      id="home"
+      className="relative w-full text-white min-h-[90vh] pulsating-lights-bg"
+    >
+      <VideoBackground />
+      <AnimatedLines />
+
+      <div className="relative z-10 container mx-auto h-full min-h-[90vh] p-6 flex flex-col justify-between">
+        <header className="flex justify-between items-center w-full">
+          <div className="flex items-center gap-4">
+            <Avatar className="w-12 h-12">
+              <AvatarImage
+                src="https://github.com/SantosVicente.png"
+                alt="Vicente Santos"
+              />
+              <AvatarFallback>VS</AvatarFallback>
+            </Avatar>
+          </div>
+          <LiveViewerCounter />
+        </header>
+
+        <main className="flex flex-col gap-6 max-w-2xl">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
+            Desenvolvedor Full-Stack & Estudante de Computação
+          </h1>
+          <p className="text-lg text-neutral-300">
+            Sou apaixonado por tecnologia e aprendizado contínuo, com foco em
+            ferramentas modernas como ReactJS, Node.js, React Native e Tailwind.
+          </p>
+          <div className="flex flex-wrap items-center gap-4 mt-4">
+            <AnimatedGlowButton>Ver Projetos</AnimatedGlowButton>
+          </div>
+        </main>
+
+        <div></div>
+      </div>
+    </section>
+  );
+}
