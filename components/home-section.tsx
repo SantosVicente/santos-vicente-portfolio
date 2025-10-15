@@ -3,6 +3,7 @@ import { VideoBackground } from "@/components/video-background";
 import { AnimatedLines } from "@/components/ui/animated-lines";
 import { LiveViewerCounter } from "./ui/live-viewer-counter";
 import { AnimatedGlowButton } from "./ui/animated-glow-button";
+import { TechStackCards } from "./ui/tech-stack-cards";
 
 export function HomeSection() {
   return (
@@ -27,18 +28,25 @@ export function HomeSection() {
           <LiveViewerCounter />
         </header>
 
-        <main className="flex flex-col gap-6 max-w-2xl">
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight">
-            Desenvolvedor Full-Stack & Estudante de Computação
-          </h1>
-          <p className="text-lg text-neutral-300">
-            Sou apaixonado por tecnologia e aprendizado contínuo, com foco em
-            ferramentas modernas como ReactJS, Node.js, React Native e Tailwind.
-          </p>
-          <div className="flex flex-wrap items-center gap-4 mt-4">
-            <AnimatedGlowButton>Ver Projetos</AnimatedGlowButton>
-          </div>
-        </main>
+        <div className="grid md:grid-cols-2 gap-8 items-center w-full">
+          <main className="flex flex-col gap-6 text-center md:text-left items-center md:items-start">
+            <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight ">
+              Desenvolvedor Full-Stack & Estudante de Informática
+            </h1>
+            <p className="text-lg text-neutral-300">
+              Sou apaixonado por tecnologia e aprendizado contínuo, com foco em
+              ferramentas modernas como ReactJS, Node.js, React Native e
+              Tailwind.
+            </p>
+            <div className="flex flex-wrap items-center gap-4 mt-4">
+              <AnimatedGlowButton>Ver Projetos</AnimatedGlowButton>
+            </div>
+          </main>
+
+          <aside className="hidden md:flex items-center justify-center h-full">
+            <TechStackCards />
+          </aside>
+        </div>
 
         <div></div>
       </div>

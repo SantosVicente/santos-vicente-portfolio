@@ -27,7 +27,10 @@ const contactLinks = [
 
 export function ContactSection() {
   return (
-    <section id="contact" className="container mx-auto py-12 px-4 text-center">
+    <section
+      id="contact"
+      className="container z-10 mx-auto py-12 px-4 text-center"
+    >
       <h2 className="text-3xl font-bold mb-4">Vamos Conversar?</h2>
       <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
         Estou sempre aberto a novas oportunidades, colaborações e a um bom

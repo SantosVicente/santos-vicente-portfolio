@@ -41,7 +41,7 @@ export function VideoBackground() {
         width={1920}
         height={1080}
         priority
-        className={`video-placeholder transition-opacity duration-700 ${
+        className={`hidden md:flex video-placeholder transition-opacity duration-700 ${
           isVideoVisible ? "opacity-0" : "opacity-100"
         }`}
         src="/bg-overlay-vd.webp"
@@ -50,7 +50,7 @@ export function VideoBackground() {
 
       <video
         ref={videoRef}
-        className="video-background"
+        className="hidden md:flex video-background"
         muted
         loop
         playsInline

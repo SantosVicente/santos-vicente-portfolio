@@ -37,9 +37,7 @@ export function Navbar() {
 
   return (
     <header className={`menu ${!isVisible ? "menu-hidden" : ""}`}>
-      {/* O container interno permanece o mesmo, mas ajustamos para o novo design */}
       <div className="container h-full flex items-center justify-between px-8">
-        {/* Logo/Nome */}
         <Link
           href="/"
           className="font-bold text-lg flex items-center gap-2 text-white"
@@ -53,21 +51,23 @@ export function Navbar() {
           Vicente Santos
         </Link>
 
-        {/* Navegação para Desktop */}
         <nav className="hidden md:flex gap-2">
           {NAV_LINKS.map((link) => (
             <Button
               key={link.href}
               variant="ghost"
               asChild
-              className="text-white hover:bg-white/10 hover:text-white"
+              className={
+                link.href === "#skills"
+                  ? "block md:hidden text-white hover:bg-white/10 hover:text-white"
+                  : " text-white hover:bg-white/10 hover:text-white"
+              }
             >
               <Link href={link.href}>{link.label}</Link>
             </Button>
           ))}
         </nav>
 
-        {/* Menu para Mobile */}
         <div className="md:hidden">
           <Sheet>
             <SheetTrigger asChild>
