@@ -9,7 +9,7 @@ export function HomeSection() {
   return (
     <section
       id="home"
-      className="relative w-full text-white min-h-[90vh] pulsating-lights-bg"
+      className="relative w-full text-white min-h-[90vh] pulsating-lights-bg overflow-x-hidden"
     >
       <VideoBackground />
       <AnimatedLines />
