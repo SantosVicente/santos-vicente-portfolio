@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import StarBorder from "./ui/star-border";
 
 const NAV_LINKS = [
   { href: "#skills", label: "Habilidades" },
@@ -37,63 +36,61 @@ export function Navbar() {
   }, [lastScrollY, isVisible]);
 
   return (
-    <StarBorder as="button" className="custom-class" color="cyan" speed="5s">
-      <header className={`menu ${!isVisible ? "menu-hidden" : ""}`}>
-        <div className="container h-full flex items-center justify-between px-8">
-          <Link
-            href="/"
-            className="font-bold text-lg flex items-center gap-2 text-white"
-          >
-            <Image
-              src={"/logo.png"}
-              width={50}
-              height={50}
-              alt="Logo Vicente Santos"
-            />
-            Vicente Santos
-          </Link>
+    <header className={`menu ${!isVisible ? "menu-hidden" : ""}`}>
+      <div className="container h-full flex items-center justify-between px-8">
+        <Link
+          href="/"
+          className="font-bold text-lg flex items-center gap-2 text-white"
+        >
+          <Image
+            src={"/logo.png"}
+            width={50}
+            height={50}
+            alt="Logo Vicente Santos"
+          />
+          Vicente Santos
+        </Link>
 
-          <nav className="hidden md:flex gap-2">
-            {NAV_LINKS.map((link) => (
+        <nav className="hidden md:flex gap-2">
+          {NAV_LINKS.map((link) => (
+            <Button
+              key={link.href}
+              variant="ghost"
+              asChild
+              className={
+                link.href === "#skills"
+                  ? "block md:hidden text-white hover:bg-white/10 hover:text-white"
+                  : " text-white hover:bg-white/10 hover:text-white"
+              }
+            >
+              <Link href={link.href}>{link.label}</Link>
+            </Button>
+          ))}
+        </nav>
+
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
               <Button
-                key={link.href}
-                variant="ghost"
-                asChild
-                className={
-                  link.href === "#skills"
-                    ? "block md:hidden text-white hover:bg-white/10 hover:text-white"
-                    : " text-white hover:bg-white/10 hover:text-white"
-                }
+                variant="outline"
+                size="icon"
+                className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white"
               >
-                <Link href={link.href}>{link.label}</Link>
+                <Menu className="h-4 w-4" />
               </Button>
-            ))}
-          </nav>
-
-          <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="bg-transparent border-white/50 text-white hover:bg-white/10 hover:text-white"
-                >
-                  <Menu className="h-4 w-4" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right">
-                <nav className="flex flex-col gap-4 mt-8">
-                  {NAV_LINKS.map((link) => (
-                    <Button key={link.href} variant="ghost" asChild>
-                      <Link href={link.href}>{link.label}</Link>
-                    </Button>
-                  ))}
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <nav className="flex flex-col gap-4 mt-8">
+                {NAV_LINKS.map((link) => (
+                  <Button key={link.href} variant="ghost" asChild>
+                    <Link href={link.href}>{link.label}</Link>
+                  </Button>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
-      </header>
-    </StarBorder>
+      </div>
+    </header>
   );
 }
