@@ -42,7 +42,6 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
 );
 Card.displayName = "Card";
 
-type CardRef = RefObject<HTMLDivElement>;
 interface Slot {
   x: number;
   y: number;
@@ -110,7 +109,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
     () => Children.toArray(children) as ReactElement<CardProps>[],
     [children]
   );
-  const refs = useMemo<CardRef[]>(
+  const refs = useMemo(
     () => childArr.map(() => React.createRef<HTMLDivElement>()),
     [childArr.length]
   );
@@ -120,7 +119,7 @@ const CardSwap: React.FC<CardSwapProps> = ({
   );
 
   const tlRef = useRef<gsap.core.Timeline | null>(null);
-  const intervalRef = useRef<number>();
+  const intervalRef = useRef<number>(0);
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
