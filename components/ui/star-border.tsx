@@ -24,12 +24,14 @@ const StarBorder = <T extends React.ElementType = "button">({
   return (
     <Component
       className={`star-border-container ${className}`}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       {...(rest as any)}
       style={{
         // Passa a thickness como uma variável CSS para o CSS usar
         "--thickness-var": `${thickness}px`,
         // O padding top/bottom cria o espaço para a borda brilhar
         padding: `var(--thickness-var) 0`,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         ...(rest as any).style,
       }}
     >
@@ -51,10 +53,7 @@ const StarBorder = <T extends React.ElementType = "button">({
 
       {/* 2. NOVA CAMADA DE MÁSCARA (Z-INDEX: 1) */}
       {/* Esta div será opaca e esconderá o centro dos gradientes */}
-      <div
-        className="inner-content-bg-mask"
-        style={{ "--thickness-var": `${thickness}px` }}
-      ></div>
+      <div className="inner-content-bg-mask"></div>
 
       {/* 3. SEU CONTEÚDO (Z-INDEX: 2) */}
       {/* Este é o seu header transparente, que fica na frente de tudo */}

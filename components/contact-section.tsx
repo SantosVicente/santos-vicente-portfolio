@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Gitlab, Instagram, Github } from "lucide-react";
+import { Mail, Linkedin, Instagram, Github } from "lucide-react";
 import Link from "next/link";
 
 const contactLinks = [
