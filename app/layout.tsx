@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Preloader } from "@/components/ui/preloader";
 import SplashCursor from "@/components/ui/splash-cursor";
-import LightRays from "@/components/LightRays";
+import LightRays from "@/components/ui/light-rays";
 
 const inter = Inter({ subsets: ["latin"] });
 

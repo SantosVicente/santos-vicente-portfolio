@@ -1,13 +1,11 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
-import { VideoBackground } from "@/components/video-background";
 import { AnimatedLines } from "@/components/ui/animated-lines";
 import { LiveViewerCounter } from "./ui/live-viewer-counter";
 import { AnimatedGlowButton } from "./ui/animated-glow-button";
 import { TechStackCards } from "./ui/tech-stack-cards";
 import SplitText from "./ui/split-text";
-import LightRays from "./LightRays";
 
 export function HomeSection() {
   const handleAnimationComplete = () => {
@@ -19,8 +17,6 @@ export function HomeSection() {
       id="home"
       className="relative w-full text-white min-h-[90vh] pulsating-lights-bg overflow-x-hidden"
     >
-      {/* <VideoBackground /> */}
-
       <AnimatedLines />
 
       <div className="relative z-10 container mx-auto h-full min-h-[90vh] p-6 flex flex-col justify-between">
@@ -84,9 +80,7 @@ export function HomeSection() {
             </div>
           </main>
 
-          <aside className="hidden md:flex items-center justify-center h-full">
-            <TechStackCards />
-          </aside>
+          <TechStackCards />
         </div>
 
         <div></div>
