@@ -3,6 +3,7 @@ import { ProjectsSection } from "@/components/projects-section";
 import { SkillsSection } from "@/components/skills-section";
 import { ContactSection } from "@/components/contact-section";
 import { CounterSection } from "@/components/counter-section";
+import LightRays from "@/components/LightRays";
 
 export default async function Home() {
   return (

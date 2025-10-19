@@ -7,6 +7,7 @@ import { LiveViewerCounter } from "./ui/live-viewer-counter";
 import { AnimatedGlowButton } from "./ui/animated-glow-button";
 import { TechStackCards } from "./ui/tech-stack-cards";
 import SplitText from "./ui/split-text";
+import LightRays from "./LightRays";
 
 export function HomeSection() {
   const handleAnimationComplete = () => {
@@ -18,19 +19,8 @@ export function HomeSection() {
       id="home"
       className="relative w-full text-white min-h-[90vh] pulsating-lights-bg overflow-x-hidden"
     >
-      <VideoBackground />
-      {/* <LightRays
-        raysOrigin="top-center"
-        raysColor="#00ffff"
-        raysSpeed={1.5}
-        lightSpread={0.8}
-        rayLength={1.2}
-        followMouse={true}
-        mouseInfluence={0.1}
-        noiseAmount={0.1}
-        distortion={0.05}
-        className="custom-rays"
-      /> */}
+      {/* <VideoBackground /> */}
+
       <AnimatedLines />
 
       <div className="relative z-10 container mx-auto h-full min-h-[90vh] p-6 flex flex-col justify-between">
