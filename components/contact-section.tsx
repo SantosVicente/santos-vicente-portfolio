@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Linkedin, Gitlab, Instagram } from "lucide-react";
+import { Mail, Linkedin, Gitlab, Instagram, Github } from "lucide-react";
 import Link from "next/link";
 
 const contactLinks = [
@@ -14,9 +14,9 @@ const contactLinks = [
     icon: <Linkedin className="mr-2 h-4 w-4" />,
   },
   {
-    href: "https://gitlab.com/SantosVicente",
-    label: "GitLab",
-    icon: <Gitlab className="mr-2 h-4 w-4" />,
+    href: "https://github.com/SantosVicente",
+    label: "GitHub",
+    icon: <Github className="mr-2 h-4 w-4" />,
   },
   {
     href: "https://www.instagram.com/santos.vicente.js_/",

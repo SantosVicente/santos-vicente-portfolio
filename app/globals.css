@@ -131,23 +131,15 @@
   transform: translateX(-50%);
   border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(
-    20,
-    20,
-    20,
-    0.3
-  ); /* Um fundo sutil para o blur funcionar melhor */
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-
-  /* Comportamento */
+  background-color: rgba(20, 20, 20, 0.3);
+  backdrop-filter: blur(10px);
+  webkit-backdrop-filter: blur(10px);
   transition: top 0.5s ease-in-out;
-  z-index: 50; /* z-index do shadcn é alto, 50 é suficiente */
+  z-index: 50;
 }
 
-/* Classe para esconder o menu */
 .menu-hidden {
-  top: -100px; /* Move o menu para fora da tela */
+  top: -100px;
 }
 
 .selector {

@@ -5,6 +5,7 @@ import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Preloader } from "@/components/ui/preloader";
+import SplashCursor from "@/components/ui/splash-cursor";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={inter.className}>
         <Preloader />
+        <SplashCursor />
         <CustomCursor />
         <Navbar />
         <div className="pt-22">{children}</div>
