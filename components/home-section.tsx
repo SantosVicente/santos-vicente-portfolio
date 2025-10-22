@@ -20,21 +20,23 @@ export function HomeSection() {
       <AnimatedLines />
 
       <div className="relative z-10 container mx-auto h-full min-h-[90vh] p-6 flex flex-col justify-between">
-        <header className="flex justify-between items-center w-full">
-          <div className="flex items-center gap-4">
-            <Avatar className="w-12 h-12">
-              <AvatarImage
-                src="https://github.com/SantosVicente.png"
-                alt="Vicente Santos"
-              />
-              <AvatarFallback>VS</AvatarFallback>
-            </Avatar>
+        <header className="flex justify-center items-left w-full flex-col gap-16">
+          <div className="w-min">
+            <LiveViewerCounter />
           </div>
-          <LiveViewerCounter />
         </header>
 
         <div className="grid md:grid-cols-2 gap-8 items-center w-full">
           <main className="flex flex-col gap-6 text-center md:text-left items-center md:items-start">
+            <div className="flex items-center">
+              <Avatar className="w-36 h-36">
+                <AvatarImage
+                  src="https://github.com/SantosVicente.png"
+                  alt="Vicente Santos"
+                />
+                <AvatarFallback>VS</AvatarFallback>
+              </Avatar>
+            </div>
             <SplitText
               text="Desenvolvedor Full-Stack & Estudante de Informática"
               className="text-4xl md:text-5xl font-semibold"
@@ -76,7 +78,9 @@ export function HomeSection() {
               Tailwind.
             </p> */}
             <div className="flex flex-wrap items-center gap-4 mt-4">
-              <AnimatedGlowButton>Ver Projetos</AnimatedGlowButton>
+              <AnimatedGlowButton href="#projects">
+                Ver Projetos
+              </AnimatedGlowButton>
             </div>
           </main>
 

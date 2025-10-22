@@ -7,6 +7,7 @@ import { CustomCursor } from "@/components/ui/custom-cursor";
 import { Preloader } from "@/components/ui/preloader";
 import SplashCursor from "@/components/ui/splash-cursor";
 import LightRays from "@/components/ui/light-rays";
+import SmoothScroll from "@/components/smooth-scroll";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,26 +25,28 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={inter.className}>
-        <Preloader />
-        <SplashCursor />
-        <CustomCursor />
-        <div className="absolute inset-0 min-h-96">
-          <LightRays
-            raysOrigin="top-center"
-            raysColor="#7434eb"
-            raysSpeed={1.5}
-            lightSpread={0.8}
-            rayLength={1.2}
-            followMouse={true}
-            mouseInfluence={0.1}
-            noiseAmount={0.1}
-            distortion={0.05}
-            className="custom-rays absolute"
-          />
-        </div>
-        <Navbar />
-        <div className="pt-22">{children}</div>
-        <Footer />
+        <SmoothScroll>
+          <Preloader />
+          <SplashCursor />
+          <CustomCursor />
+          <div className="absolute inset-0 min-h-96">
+            <LightRays
+              raysOrigin="top-center"
+              raysColor="#7434eb"
+              raysSpeed={1.5}
+              lightSpread={0.8}
+              rayLength={1.2}
+              followMouse={true}
+              mouseInfluence={0.1}
+              noiseAmount={0.1}
+              distortion={0.05}
+              className="custom-rays absolute"
+            />
+          </div>
+          <Navbar />
+          <div className="pt-22">{children}</div>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );
