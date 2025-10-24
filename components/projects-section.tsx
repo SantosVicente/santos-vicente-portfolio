@@ -32,10 +32,6 @@ export async function ProjectsSection() {
   );
   const repos: Repo[] = await response.json();
 
-  // 1. Imagem dummy. Um pixel transparente para "satisfazer" o TiltedCard
-  const dummyPixel =
-    "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-
   return (
     <section id="projects" className="container mx-auto z-10 py-12 px-4">
       <h2 className="text-3xl font-bold text-center mb-8">Meus Projetos</h2>
@@ -43,20 +39,16 @@ export async function ProjectsSection() {
         {repos
           .filter((repo) => repo.description)
           .map((repo) => (
-            <TiltedCard
-              key={repo.id}
-              imageSrc={dummyPixel}
-              altText={repo.description || repo.name}
-              captionText=""
-              containerHeight="280px"
-              containerWidth="100%"
-              imageHeight="100%"
-              imageWidth="100%"
-              rotateAmplitude={8}
-              scaleOnHover={1.05}
-              showTooltip={false}
-              displayOverlayContent={true}
-              overlayContent={
+            <div key={repo.id} className="h-[300px] w-full">
+              <TiltedCard
+                captionText=""
+                containerHeight="100%"
+                containerWidth="100%"
+                rotateAmplitude={8}
+                scaleOnHover={1.05}
+                showTooltip={false}
+                showMobileWarning={false}
+              >
                 <Card className="relative flex flex-col h-full w-full bg-neutral-950/90 border border-white/10 text-white backdrop-blur-sm overflow-hidden">
                   <CardHeader>
                     <CardTitle className="text-lg text-white">
@@ -110,8 +102,8 @@ export async function ProjectsSection() {
                     </span>
                   </Link>
                 </Card>
-              }
-            />
+              </TiltedCard>
+            </div>
           ))}
       </div>
     </section>

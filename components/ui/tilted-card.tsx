@@ -5,19 +5,16 @@ import { useRef, useState } from "react";
 import { motion, useMotionValue, useSpring } from "motion/react";
 
 interface TiltedCardProps {
-  imageSrc: React.ComponentProps<"img">["src"];
-  altText?: string;
+  children: React.ReactNode;
   captionText?: string;
   containerHeight?: React.CSSProperties["height"];
   containerWidth?: React.CSSProperties["width"];
-  imageHeight?: React.CSSProperties["height"];
-  imageWidth?: React.CSSProperties["width"];
+  contentHeight?: React.CSSProperties["height"];
+  contentWidth?: React.CSSProperties["width"];
   scaleOnHover?: number;
   rotateAmplitude?: number;
   showMobileWarning?: boolean;
   showTooltip?: boolean;
-  overlayContent?: React.ReactNode;
-  displayOverlayContent?: boolean;
 }
 
 const springValues: SpringOptions = {
@@ -27,19 +24,16 @@ const springValues: SpringOptions = {
 };
 
 export default function TiltedCard({
-  imageSrc,
-  altText = "Tilted card image",
+  children,
   captionText = "",
-  containerHeight = "1000px",
+  containerHeight = "100%",
   containerWidth = "100%",
-  imageHeight = "1000px",
-  imageWidth = "300px",
+  contentHeight = "100%",
+  contentWidth = "100%",
   scaleOnHover = 1.1,
   rotateAmplitude = 14,
   showMobileWarning = true,
   showTooltip = true,
-  overlayContent = null,
-  displayOverlayContent = false,
 }: TiltedCardProps) {
   const ref = useRef<HTMLElement>(null);
   const x = useMotionValue(0);
@@ -111,28 +105,16 @@ export default function TiltedCard({
       <motion.div
         className="relative [transform-style:preserve-3d]"
         style={{
-          width: imageWidth,
-          height: imageHeight,
+          width: contentWidth,
+          height: contentHeight,
           rotateX,
           rotateY,
           scale,
         }}
       >
-        <motion.img
-          src={imageSrc}
-          alt={altText}
-          className="absolute top-0 left-0 object-cover rounded-[15px] will-change-transform [transform:translateZ(0)]"
-          style={{
-            width: imageWidth,
-            height: imageHeight,
-          }}
-        />
-
-        {displayOverlayContent && overlayContent && (
-          <motion.div className="absolute  w-[90%] top-0 left-0 z-[2] will-change-transform [transform:translateZ(30px)]">
-            {overlayContent}
-          </motion.div>
-        )}
+        <div className="relative w-full h-full [transform:translateZ(30px)]">
+          {children}
+        </div>
       </motion.div>
 
       {showTooltip && (

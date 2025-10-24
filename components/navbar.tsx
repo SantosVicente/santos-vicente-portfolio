@@ -37,7 +37,7 @@ export function Navbar() {
 
   return (
     <header className={`menu ${!isVisible ? "menu-hidden" : ""}`}>
-      <div className="container h-full flex items-center justify-between px-8">
+      <div className=" h-full flex items-center justify-between px-8 ">
         <Link
           href="/"
           className="font-bold text-lg flex items-center gap-2 text-white"
@@ -51,7 +51,7 @@ export function Navbar() {
           Vicente Santos
         </Link>
 
-        <nav className="hidden md:flex gap-2">
+        <nav className="hidden lg:flex gap-2">
           {NAV_LINKS.map((link) => (
             <Button
               key={link.href}
@@ -68,7 +68,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Sheet>
             <SheetTrigger asChild>
               <Button

@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { FuturisticAvatar } from "./ui/futuristic-avatar";
 import { AnimatedLines } from "@/components/ui/animated-lines";
 import { LiveViewerCounter } from "./ui/live-viewer-counter";
 import { AnimatedGlowButton } from "./ui/animated-glow-button";
@@ -26,20 +26,19 @@ export function HomeSection() {
           </div>
         </header>
 
-        <div className="grid md:grid-cols-2 gap-8 items-center w-full">
-          <main className="flex flex-col gap-6 text-center md:text-left items-center md:items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-center w-full">
+          <main className="flex flex-col gap-6  items-center lg:items-start">
             <div className="flex items-center">
-              <Avatar className="w-36 h-36">
-                <AvatarImage
-                  src="https://github.com/SantosVicente.png"
-                  alt="Vicente Santos"
-                />
-                <AvatarFallback>VS</AvatarFallback>
-              </Avatar>
+              <FuturisticAvatar
+                src="https://github.com/SantosVicente.png"
+                alt="Vicente Santos"
+                fallback="VS"
+                size={144}
+              />
             </div>
             <SplitText
               text="Desenvolvedor Full-Stack & Estudante de Informática"
-              className="text-4xl md:text-5xl font-semibold"
+              className="text-4xl lg:text-5xl font-semibold text-center lg:text-left"
               initialDelay={2.5}
               delay={70}
               duration={0.6}
@@ -49,7 +48,6 @@ export function HomeSection() {
               to={{ opacity: 1, y: 0 }}
               threshold={0.1}
               rootMargin="-100px"
-              textAlign="left"
               onLetterAnimationComplete={handleAnimationComplete}
             />
             {/*  <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight ">
@@ -59,7 +57,7 @@ export function HomeSection() {
               text="Sou apaixonado por tecnologia e aprendizado contínuo, com foco em
               ferramentas modernas como ReactJS, Node.js, React Native e
               Tailwind."
-              className="text-lg text-neutral-300"
+              className="text-lg text-neutral-300 text-center lg:text-left"
               initialDelay={2.5}
               delay={30}
               duration={0.6}
@@ -69,7 +67,6 @@ export function HomeSection() {
               to={{ opacity: 1, y: 0 }}
               threshold={0.1}
               rootMargin="-100px"
-              textAlign="left"
               onLetterAnimationComplete={handleAnimationComplete}
             />
             {/*  <p className="text-lg text-neutral-300">
@@ -84,7 +81,9 @@ export function HomeSection() {
             </div>
           </main>
 
-          <TechStackCards />
+          <div className="hidden lg:block">
+            <TechStackCards />
+          </div>
         </div>
 
         <div></div>

@@ -8,7 +8,7 @@ export function Footer() {
   return (
     <footer className="w-full border-t">
       <div className="w-full px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-center md:text-left text-sm text-muted-foreground">
           © {currentYear} Vicente Santos. Todos os direitos reservados.
         </p>
         <div className="flex items-center gap-2">

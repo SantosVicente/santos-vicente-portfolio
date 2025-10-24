@@ -21,7 +21,7 @@ export function SkillsSection() {
   return (
     <section
       id="skills"
-      className="w-full block md:hidden relative pt-32 pb-20 px-4 z-10"
+      className="w-full block lg:hidden relative pt-32 pb-20 px-4 z-10"
     >
       <div className="mx-auto">
         <h2 className="text-3xl font-bold text-center mb-8">
